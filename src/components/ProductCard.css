@@ -3,14 +3,16 @@
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.25s ease;
     position: relative;
     border: 1px solid rgba(255, 255, 255, 0.05);
+    will-change: transform;
+    contain: layout style paint;
+    transform: translateZ(0);
 }
 
 .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3px) translateZ(0);
 }
 
 .product-image-wrapper {
@@ -18,17 +20,20 @@
     width: 100%;
     overflow: hidden;
     position: relative;
+    contain: strict;
 }
 
 .product-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.3s ease;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .product-card:hover .product-image {
-    transform: scale(1.05);
+    transform: scale(1.02) translateZ(0);
 }
 
 .product-info {

@@ -8,10 +8,11 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     margin-top: calc(-1 * var(--header-height));
-    /* Go behind header */
     padding-top: var(--header-height);
     overflow: hidden;
+    contain: layout style paint;
 }
 
 .hero-overlay {
@@ -27,7 +28,8 @@
     text-align: center;
     max-width: 800px;
     padding: 0 20px;
-    animation: fadeIn 1.5s ease-out;
+    animation: fadeIn 1s ease-out forwards;
+    will-change: opacity, transform;
 }
 
 .hero-title {
@@ -62,7 +64,7 @@
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(10px);
     }
 
     to {
