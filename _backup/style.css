@@ -1,0 +1,131 @@
+/* ================= GLOBAL ================= */
+
+body {
+    scroll-behavior: smooth;
+}
+
+/* ================= GLASSMORPHISM ================= */
+
+.glass {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ================= BUTTON ================= */
+
+.btn-primary {
+    background: #22d3ee;
+    color: black;
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    font-weight: 700;
+    transition: all 0.25s ease;
+    box-shadow: 0 10px 25px rgba(34, 211, 238, 0.35);
+}
+
+.btn-primary:hover {
+    background: #06b6d4;
+    transform: translateY(-2px);
+    box-shadow: 0 20px 35px rgba(34, 211, 238, 0.45);
+}
+
+/* ================= 3D CARD EFFECT ================= */
+
+.card-3d {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.15s ease, box-shadow 0.25s ease;
+    border-radius: 1.5rem;
+    padding: 1.25rem;
+    overflow: hidden;
+}
+
+.card-layer.bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.15), transparent 70%);
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.card-3d>* {
+    position: relative;
+    z-index: 1;
+}
+
+.card-3d:hover {
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* ================= FLOATING ANIMATION ================= */
+
+.floaty {
+    animation: floaty 6s ease-in-out infinite;
+}
+
+@keyframes floaty {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* ================= BLOB BACKGROUNDS ================= */
+
+.blob {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.35;
+    animation: blobMove 18s ease-in-out infinite alternate;
+}
+
+.blob1 {
+    background: #22d3ee;
+    top: -100px;
+    left: -100px;
+}
+
+.blob2 {
+    background: #6366f1;
+    bottom: -150px;
+    right: -100px;
+}
+
+.blob3 {
+    background: #ec4899;
+    top: 30%;
+    right: -150px;
+}
+
+@keyframes blobMove {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(80px, -60px) scale(1.2);
+    }
+}
+
+/* ================= PRODUCT CARD ================= */
+
+.product-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 40px 70px rgba(0, 0, 0, 0.6);
+}
